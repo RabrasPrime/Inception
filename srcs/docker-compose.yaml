@@ -21,3 +21,16 @@ service:
       - mariadb
     volumes:
       - wordpress_data:/var/www/html
+    secrets: 
+      - db-password
+  
+  nginx:
+    image: nginx
+    container_name: nginx
+    build:
+      context: requirements/nginx/
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - 443:443
+    
