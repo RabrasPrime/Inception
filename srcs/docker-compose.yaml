@@ -11,3 +11,13 @@ service:
     volumes: 
       - db-data:/var/lib/mysql
     restart: always
+
+  wordpress:
+    image: wordpress
+    container_name: mariadb
+    build:
+      context: requirements/wordpress/
+    depend_on:
+      - mariadb
+    volumes:
+      - wordpress_data:/var/www/html
