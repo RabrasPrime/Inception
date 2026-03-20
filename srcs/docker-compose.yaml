@@ -1,0 +1,13 @@
+service:
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    build:
+      context: requirements/mariadb/
+    env_file: .env
+    secrets: 
+      - db-password
+      - db-root-passoword
+    volumes: 
+      - db-data:/var/lib/mysql
+    restart: always
