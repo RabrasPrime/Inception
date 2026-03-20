@@ -14,10 +14,10 @@ service:
 
   wordpress:
     image: wordpress
-    container_name: mariadb
+    container_name: wordpress
     build:
       context: requirements/wordpress/
-    depend_on:
+    depends_on:
       - mariadb
     volumes:
       - wordpress_data:/var/www/html
