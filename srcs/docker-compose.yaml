@@ -9,7 +9,7 @@ service:
       - db-password
       - db-root-passoword
     volumes: 
-      - db-data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     restart: always
 
   wordpress:
@@ -33,4 +33,10 @@ service:
       - wordpress_data:/var/www/html
     ports:
       - 443:443
-    
+
+secrets:
+  db-password:
+    file: ../secrets/db_password
+  db-root-passoword:
+    file: ../secrets/db_root_passoword
+
