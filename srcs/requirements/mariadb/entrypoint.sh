@@ -27,8 +27,6 @@ GRANT ALL PRIVILEGES ON \`${MARIADB_DATABASE}\`.* TO '${MARIADB_USER}'@'%';
 FLUSH PRIVILEGES;
 EOF
 
-    exec mysqld --user=mysql --init-file=/tmp/init_db.sql
-
     ARGS="$ARGS --init-file=/tmp/init_db.sql"
 fi
 
