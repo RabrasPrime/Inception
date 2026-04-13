@@ -11,4 +11,5 @@ USER mysql
 
 EXPOSE 3306
 
+
 ENTRYPOINT ["/entrypoint.sh"]
