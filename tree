@@ -1,0 +1,18 @@
+.
+├── Makefile
+├── srcs
+│   ├── docker-compose.yaml
+│   ├── requirements
+│   │   ├── mariadb
+│   │   │   ├── Dockerfile
+│   │   │   └── entrypoint.sh
+│   │   ├── nginx
+│   │   │   ├── Dockerfile
+│   │   │   └── entrypoint.sh
+│   │   └── wordpress
+│   │       ├── Dockerfile
+│   │       └── entrypoint.sh
+│   └── secrets
+└── tree
+
+6 directories, 9 files
