@@ -1,18 +1,585 @@
-.
-├── Makefile
-├── srcs
-│   ├── docker-compose.yaml
-│   ├── requirements
-│   │   ├── mariadb
-│   │   │   ├── Dockerfile
-│   │   │   └── entrypoint.sh
-│   │   ├── nginx
-│   │   │   ├── Dockerfile
-│   │   │   └── entrypoint.sh
-│   │   └── wordpress
-│   │       ├── Dockerfile
-│   │       └── entrypoint.sh
-│   └── secrets
-└── tree
+.:
+total 20
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:42 .
+drwxr-sr-x   10 tjooris  tjooris       4096 Mar 30 17:00 ..
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 .git
+-rw-r--r--    1 tjooris  tjooris          0 Mar 26 13:21 Makefile
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:30 srcs
+-rw-r--r--    1 tjooris  tjooris          3 Apr 15 12:55 tree
 
-6 directories, 9 files
+./.git:
+total 52
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:42 ..
+-rw-r--r--    1 tjooris  tjooris         10 Apr 14 16:44 COMMIT_EDITMSG
+-rw-r--r--    1 tjooris  tjooris         21 Mar 26 13:21 HEAD
+-rw-r--r--    1 tjooris  tjooris        261 Mar 26 13:21 config
+-rw-r--r--    1 tjooris  tjooris         73 Mar 26 13:21 description
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 hooks
+-rw-r--r--    1 tjooris  tjooris       1289 Apr 14 16:44 index
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 info
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 logs
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 objects
+-rw-r--r--    1 tjooris  tjooris        112 Mar 26 13:21 packed-refs
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 refs
+
+./.git/hooks:
+total 64
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 ..
+-rwxr-xr-x    1 tjooris  tjooris        478 Mar 26 13:21 applypatch-msg.sample
+-rwxr-xr-x    1 tjooris  tjooris        896 Mar 26 13:21 commit-msg.sample
+-rwxr-xr-x    1 tjooris  tjooris        189 Mar 26 13:21 post-update.sample
+-rwxr-xr-x    1 tjooris  tjooris        424 Mar 26 13:21 pre-applypatch.sample
+-rwxr-xr-x    1 tjooris  tjooris       1649 Mar 26 13:21 pre-commit.sample
+-rwxr-xr-x    1 tjooris  tjooris        416 Mar 26 13:21 pre-merge-commit.sample
+-rwxr-xr-x    1 tjooris  tjooris       1374 Mar 26 13:21 pre-push.sample
+-rwxr-xr-x    1 tjooris  tjooris       4898 Mar 26 13:21 pre-rebase.sample
+-rwxr-xr-x    1 tjooris  tjooris        544 Mar 26 13:21 pre-receive.sample
+-rwxr-xr-x    1 tjooris  tjooris       1492 Mar 26 13:21 prepare-commit-msg.sample
+-rwxr-xr-x    1 tjooris  tjooris       2783 Mar 26 13:21 push-to-checkout.sample
+-rwxr-xr-x    1 tjooris  tjooris       2308 Mar 26 13:21 sendemail-validate.sample
+-rwxr-xr-x    1 tjooris  tjooris       3650 Mar 26 13:21 update.sample
+
+./.git/info:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 ..
+-rw-r--r--    1 tjooris  tjooris        240 Mar 26 13:21 exclude
+
+./.git/logs:
+total 16
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 ..
+-rw-r--r--    1 tjooris  tjooris       1288 Apr 14 16:44 HEAD
+drwxr-sr-x    4 tjooris  tjooris       4096 Mar 26 13:21 refs
+
+./.git/logs/refs:
+total 16
+drwxr-sr-x    4 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 ..
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 heads
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 remotes
+
+./.git/logs/refs/heads:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    4 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris       1288 Apr 14 16:44 main
+
+./.git/logs/refs/remotes:
+total 12
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    4 tjooris  tjooris       4096 Mar 26 13:21 ..
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 origin
+
+./.git/logs/refs/remotes/origin:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris        180 Mar 26 13:21 HEAD
+-rw-r--r--    1 tjooris  tjooris       1022 Apr 14 16:44 main
+
+./.git/objects:
+total 244
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 ..
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 01
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 06
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 09
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 0a
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 0b
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 0c
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 13
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 15
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 1a
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 1b
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 1d
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 22
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 23
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 2b
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 32
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:04 42
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 4b
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 4d
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:04 53
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 55
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 58
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 5c
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 62
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 65
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 69
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 6d
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 71
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 82
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 86
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 8b
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 91
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 97
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 98
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 9a
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 9b
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:56 a2
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 a4
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 a5
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 a7
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 a9
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 ac
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 ae
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 af
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 bb
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 bd
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 bf
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 c4
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 c6
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 c8
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:56 cb
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 e0
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 ea
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 ef
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 f3
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 f9
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 ff
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 info
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 pack
+
+./.git/objects/01:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        357 Apr 13 15:05 6973afde5bfd463d37fb291b15509d411fc6fc
+
+./.git/objects/06:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         92 Apr 13 15:05 3fc756e4afdbbc4ff7adc0273c3002c0581f79
+
+./.git/objects/09:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        151 Apr  8 17:57 716a365c4a74a66d6374a00865e078c65a7f29
+
+./.git/objects/0a:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        132 Apr 14 16:44 5d826ed5138edac08f6710b6671601e7f39dc2
+
+./.git/objects/0b:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr  9 16:44 5732b2fcb18d1719a0098cc99202b6fdbba870
+-r--r--r--    1 tjooris  tjooris         84 Apr 13 15:05 cd25cec3f62402d656b3fcfee72ccdf4cdd130
+
+./.git/objects/0c:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        133 Apr 13 15:05 79a7ea3e30686d7a42ce968cd3eb8bd3a0ec95
+
+./.git/objects/13:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         92 Apr  7 17:05 ba98338d131d936b6a972e3a66a7302bd516cd
+
+./.git/objects/15:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         92 Apr  9 16:44 c0468deb90b4f52057882e288accce66603133
+
+./.git/objects/16:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         55 Apr  7 15:41 2802cbfe01c18cb976d6c88ff6d5362f17dd5a
+
+./.git/objects/1a:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         26 Apr 14 16:43 2485251c33a70432394c93fb89330ef214bfc9
+
+./.git/objects/1b:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        161 Apr 13 17:13 4a6a5d9b60748d8447aef7acda5543514b1e2c
+
+./.git/objects/1d:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         33 Apr  9 16:44 9f92581988402f56b09120220f45167fa1d1ec
+
+./.git/objects/22:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        355 Apr 13 17:13 b6b6e360f78fab95eeadcd665b0df52675b70d
+
+./.git/objects/23:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        150 Apr 14 16:44 e41438f349cbc32d991f7bca11e7efd4b60a8d
+
+./.git/objects/2b:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr 13 15:05 47f8150a514dd968c0ddd4d91c833dc2b31356
+
+./.git/objects/32:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr  8 17:57 44fae597225ea6b120a1260442a4419ae15447
+
+./.git/objects/42:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:04 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         80 Apr  7 17:04 1ea92d233e2ce09a19c7bcfde44f654b91bfd4
+
+./.git/objects/4b:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        149 Apr  7 15:41 1a6c0abbfd0ec3524222e6a5fda7402c306dc2
+
+./.git/objects/4d:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        103 Apr  9 16:44 c092416a9a973fd06a20e8a03b543e58e9e13a
+
+./.git/objects/53:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:04 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        186 Apr  7 17:04 5e67e6671feb4bba9978c5b058d4713a662d82
+
+./.git/objects/55:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        197 Apr 13 15:05 0dcbb2006e7a8432e94d53db5e969c8fe310e2
+
+./.git/objects/58:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr  7 17:05 ab390d2bf3ea5a37d122829dc18b91f48c14f3
+
+./.git/objects/5c:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        132 Apr 13 17:13 63717e9a2bc202ab67a1ca28967d6f03bc89fb
+
+./.git/objects/62:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr 14 16:44 c091e73f61ee5ea9a03b18d40516b4bf0ba382
+
+./.git/objects/65:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        156 Apr 14 16:43 d1b822d67f9b1c3db52ff556fb9e21d67b4c78
+
+./.git/objects/69:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        251 Apr 13 15:05 b470c5b9049a9f9a9e760133ee1ad33c94ca2d
+
+./.git/objects/6d:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        152 Apr  9 16:44 20d855f9c4f75f740e8b944b7ba88dcc615f19
+
+./.git/objects/71:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        102 Apr  7 17:05 d10cba25098f6a559c07bab84625fdfb748bcd
+
+./.git/objects/82:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        132 Apr 13 15:05 cc72dc87d3b3f38db5be916f8476daf386a333
+
+./.git/objects/86:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        177 Apr 13 15:05 d5a74e2ee85b4dcc6c1ee52750b66fac7d2f0e
+
+./.git/objects/8b:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         92 Apr 14 16:44 cd418c7e22a2dbe15d6664d4c19462b9d9e6d0
+
+./.git/objects/91:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        447 Apr  9 16:44 1aa687a96c8516d407e5fafc900f78970948e4
+-r--r--r--    1 tjooris  tjooris         84 Apr  9 16:44 eb8c4ba70bc21e5249a23acb257065183dc81c
+
+./.git/objects/97:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr 13 17:13 6d8a1c52ccc5e25aadb818b881ec5cd76e7ad2
+
+./.git/objects/98:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        198 Apr 14 16:43 c4a49251ba944b66720882ec7c55e31010371c
+
+./.git/objects/9a:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        103 Apr  7 15:41 b02f4e63d6138939505f759d111be60234bfa8
+
+./.git/objects/9b:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        111 Apr 14 16:44 542aaee2822ab7870ccceee4039c4d04a458b1
+
+./.git/objects/a2:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:56 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        455 Apr  8 17:56 fb9b86d68542c2368994c340a76277c1d49d30
+
+./.git/objects/a4:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        302 Apr 13 15:05 02a5a300d9b0168da2ebfda8748d8e7fc2e183
+
+./.git/objects/a5:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        351 Apr 13 17:13 3cf37c5f1ea3b450029ebec8a4f49e7beff970
+
+./.git/objects/a7:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        279 Apr  9 16:44 75b05e43cf02bd774764ce63f79565ea6eabdf
+
+./.git/objects/a9:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        102 Apr 14 16:43 033a7e617aac9ab1fca147ac413dfa65102ad7
+
+./.git/objects/ac:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        105 Apr  7 15:41 08a8e099731e80335e7d96d6481593c195ef2a
+
+./.git/objects/ae:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        112 Apr  7 15:41 f626d7ae909b5bdd860d74ea928b9d735542b2
+
+./.git/objects/af:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        150 Apr  7 17:05 11e7dc9e6831f7c35e644c1402515f97461fbf
+
+./.git/objects/bb:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:43 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        196 Apr 14 16:43 54a0a1c579c0caec20a67f22e0cb403b6ab975
+
+./.git/objects/bd:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        124 Apr 14 16:44 33627fa1a4eced0f23576224a55a51f2811a5a
+-r--r--r--    1 tjooris  tjooris         92 Apr  8 17:57 fc953e0281a6c24b2d3bc2a278b937f0120a43
+
+./.git/objects/bf:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         55 Apr 14 16:44 0f5b5ba3ce50909f9adf5492194328e4f7e61b
+
+./.git/objects/c4:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         84 Apr  7 15:41 793648f645cf9fd3d68395b910e06bf71938d2
+
+./.git/objects/c6:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         84 Apr 13 17:13 997b085829604c90010966a6a62054d5fd5647
+
+./.git/objects/c8:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 15:41 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         55 Apr  9 16:44 52f1084e78de4aaa3e0a3e6c207dcaf897e848
+
+./.git/objects/cb:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:56 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        197 Apr  8 17:56 1f41129613a6965741ad0468e9e941a8904b8b
+
+./.git/objects/e0:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 17:13 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         93 Apr 13 17:13 6509d4161f0424c682c79ba6f1186b66e5b112
+
+./.git/objects/ea:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         84 Apr  8 17:57 bde0fe4b75f8ee4cfb9806c1c2049c09586b27
+
+./.git/objects/ef:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  8 17:57 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris        102 Apr  8 17:57 3566ba5c582da2714c8f567263ca49bd2ea3a3
+
+./.git/objects/f3:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:44 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         92 Apr  9 16:44 c25e148a9ff47120bdb69c77924b686d4badd4
+
+./.git/objects/f9:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 13 15:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         92 Apr 13 15:05 0a1969d50bae4801daf9a78ec011f9354beeb0
+
+./.git/objects/ff:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 17:05 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris         84 Apr  7 17:05 363b9903fd87215dac6f58b6d908513796566a
+
+./.git/objects/info:
+total 8
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+
+./.git/objects/pack:
+total 20
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x   61 tjooris  tjooris       4096 Apr 14 16:44 ..
+-r--r--r--    1 tjooris  tjooris       2080 Mar 26 13:21 pack-06f313650625f6699be89a1760378535d13b31e8.idx
+-r--r--r--    1 tjooris  tjooris       3484 Apr  7 15:41 pack-06f313650625f6699be89a1760378535d13b31e8.pack
+-r--r--r--    1 tjooris  tjooris        196 Mar 26 13:21 pack-06f313650625f6699be89a1760378535d13b31e8.rev
+
+./.git/refs:
+total 20
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    7 tjooris  tjooris       4096 Apr 14 16:44 ..
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 heads
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 remotes
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 tags
+
+./.git/refs/heads:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris         41 Apr 14 16:44 main
+
+./.git/refs/remotes:
+total 12
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 ..
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 origin
+
+./.git/refs/remotes/origin:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 16:44 .
+drwxr-sr-x    3 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris         30 Mar 26 13:21 HEAD
+-rw-r--r--    1 tjooris  tjooris         41 Apr 14 16:44 main
+
+./.git/refs/tags:
+total 8
+drwxr-sr-x    2 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 ..
+
+./srcs:
+total 24
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:30 .
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:42 ..
+-rw-r--r--    1 tjooris  tjooris        136 Apr 13 15:04 .env
+-rw-r--r--    1 tjooris  tjooris        936 Apr 13 15:03 docker-compose.yaml
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 requirements
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 11:30 secrets
+
+./srcs/requirements:
+total 20
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 .
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:30 ..
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 16:14 mariadb
+drwxr-sr-x    3 tjooris  tjooris       4096 Apr 14 11:49 nginx
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:15 wordpress
+
+./srcs/requirements/mariadb:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  7 16:14 .
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris        283 Apr 14 13:25 Dockerfile
+-rw-r--r--    1 tjooris  tjooris        804 Apr  9 11:32 entrypoint.sh
+
+./srcs/requirements/nginx:
+total 20
+drwxr-sr-x    3 tjooris  tjooris       4096 Apr 14 11:49 .
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris        180 Apr 14 14:00 Dockerfile
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 11:49 conf
+-rw-r--r--    1 tjooris  tjooris         10 Apr 14 10:07 entrypoint.sh
+
+./srcs/requirements/nginx/conf:
+total 12
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 11:49 .
+drwxr-sr-x    3 tjooris  tjooris       4096 Apr 14 11:49 ..
+-rw-r--r--    1 tjooris  tjooris        147 Apr 15 12:54 nginx.conf
+
+./srcs/requirements/wordpress:
+total 16
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr  9 16:15 .
+drwxr-sr-x    5 tjooris  tjooris       4096 Mar 26 13:21 ..
+-rw-r--r--    1 tjooris  tjooris        579 Apr 13 17:13 Dockerfile
+-rw-r--r--    1 tjooris  tjooris        637 Apr 13 16:38 entrypoint.sh
+
+./srcs/secrets:
+total 8
+drwxr-sr-x    2 tjooris  tjooris       4096 Apr 14 11:30 .
+drwxr-sr-x    4 tjooris  tjooris       4096 Apr 14 11:30 ..

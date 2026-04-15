@@ -9,6 +9,8 @@ services:
       - db-root-password
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - inception
     restart: always
 
   wordpress:
@@ -23,12 +25,13 @@ services:
       - db-password
       - wp-admin-password
     env_file: .env
+    networks:
+      - inception
     restart: always
 
   nginx:
     container_name: nginx
     build:
-      context: requirements/nginx/
       context: requirements/nginx/
     depends_on:
       - wordpress
@@ -36,6 +39,8 @@ services:
       - wordpress_data:/var/www/html
     ports:
       - 443:443
+    networks:
+      - inception
     restart: always
 
 secrets:
@@ -45,3 +50,11 @@ secrets:
     file: ../secrets/db_root_password
   wp-admin-password:
     file: ../secrets/wp_admin_password
+
+networks:
+  inception:
+    driver: bridge
+
+volumes:
+  db_data:
+  wordpress_data:
