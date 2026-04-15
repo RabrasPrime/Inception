@@ -5,10 +5,7 @@ RUN apk add --no-cache mariadb mariadb-client && \
         chown -R mysql:mysql /run/mysqld && \
         chown -R mysql:mysql /var/lib/mysql
 
-COPY
 COPY --chmod=+x entrypoint.sh /
-
-USER mysql
 
 EXPOSE 3306
 
