@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE            COMMAND            CREATED          STATUS          PORTS                                     NAMES
+111a4284e9da   srcs-nginx       "/entrypoint.sh"   31 seconds ago   Up 30 seconds   0.0.0.0:443->443/tcp, [::]:443->443/tcp   nginx
+094a3b1478a7   srcs-wordpress   "/entrypoint.sh"   31 seconds ago   Up 30 seconds   9000/tcp                                  wordpress
+b53d772a9b6a   srcs-mariadb     "/entrypoint.sh"   31 seconds ago   Up 30 seconds   3306/tcp                                  mariadb

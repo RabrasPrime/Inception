@@ -1,7 +1,7 @@
 #!/bin/sh
 
-DB_PASS=$(cat /run/secrets/db-password)
-WP_ADMIN_PASS=$(cat /run/secrets/wp-admin-password)
+DB_PASS=$(cat /run/secrets/db-password | tr -d '\n')
+WP_ADMIN_PASS=$(cat /run/secrets/wp-admin-password | tr -d '\n')
 
 until mysqladmin ping -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASS" --silent 2>/dev/null; do
     sleep 2
@@ -21,5 +21,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
         --admin_password="$WP_ADMIN_PASS" \
         --admin_email="$WP_EMAIL"
 fi
+
+sed -i 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9000/' /etc/php83/php-fpm.d/www.conf
 
 exec php-fpm83 -F

@@ -8,7 +8,7 @@ if [ ! -d "/run/mysqld" ]; then
     chown -R mysql:mysql /run/mysqld
 fi
 
-ARGS="--user=mysql --console --bind-address=0.0.0.0"
+ARGS="--user=mysql --console --bind-address=0.0.0.0 --port=3306 --skip-networking=0"
 
 if [ ! -d "/var/lib/mysql/mysql" ]; then
 
