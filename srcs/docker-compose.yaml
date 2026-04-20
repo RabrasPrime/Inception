@@ -1,60 +1,61 @@
 services:
-  mariadb:
-    container_name: mariadb
-    build:
-      context: requirements/mariadb/
-    env_file: .env
-    secrets:
-      - db-password
-      - db-root-password
-    volumes:
-      - db_data:/var/lib/mysql
-    networks:
-      - inception
-    restart: always
+    mariadb:
+        container_name: mariadb
+        build:
+            context: requirements/mariadb/
+        env_file: .env
+        secrets:
+            - db-password
+            - db-root-password
+        volumes:
+            - db_data:/var/lib/mysql
+        networks:
+            - inception
+        restart: always
 
-  wordpress:
-    container_name: wordpress
-    build:
-      context: requirements/wordpress/
-    depends_on:
-      - mariadb
-    volumes:
-      - wordpress_data:/var/www/html
-    secrets:
-      - db-password
-      - wp-admin-password
-    env_file: .env
-    networks:
-      - inception
-    restart: always
+    wordpress:
+        container_name: wordpress
+        build:
+            context: requirements/wordpress/
+        depends_on:
+            - mariadb
+        volumes:
+            - wordpress_data:/var/www/html
+        secrets:
+            - db-password
+            - wp-admin-password
+        env_file: .env
+        networks:
+            - inception
+        restart: always
 
-  nginx:
-    container_name: nginx
-    build:
-      context: requirements/nginx/
-    depends_on:
-      - wordpress
-    volumes:
-      - wordpress_data:/var/www/html
-    ports:
-      - 443:443
-    networks:
-      - inception
-    restart: always
+    nginx:
+        container_name: nginx
+        hostname: ${HOST_NAME}
+        build:
+            context: requirements/nginx/
+        depends_on:
+            - wordpress
+        volumes:
+            - wordpress_data:/var/www/html
+        ports:
+            - 443:443
+        networks:
+            - inception
+        restart: always
 
 secrets:
-  db-password:
-    file: secrets/db_password
-  db-root-password:
-    file: secrets/db_root_password
-  wp-admin-password:
-    file: secrets/wp_admin_password
+    db-password:
+        file: secrets/db_password
+    db-root-password:
+        file: secrets/db_root_password
+    wp-admin-password:
+        file: secrets/wp_admin_password
 
 networks:
-  inception:
-    driver: bridge
+    inception:
+        driver: bridge
 
 volumes:
-  db_data:
-  wordpress_data:
+    db_data:
+    wordpress_data:
