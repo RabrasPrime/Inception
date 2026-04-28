@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OBSIDIAN — Restaurant Gastronomique</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- NAV -->
+        <nav id="navbar">
+            <a href="#hero" class="nav-logo">OBSIDIAN</a>
+            <ul class="nav-links">
+                <li><a href="#philosophie">Notre histoire</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#ambiance">L'espace</a></li>
+                <li><a href="#reservation" class="nav-reserve">Réserver</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO -->
+        <section id="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-line"></div>
+            <p class="hero-eyebrow">Lyon · Gastronomie contemporaine</p>
+            <h1 class="hero-title">OB<em>SI</em>DIAN</h1>
+            <p class="hero-sub">Une table. Une expérience. Une seule nuit.</p>
+            <div class="hero-cta">
+                <a href="#reservation" class="btn-primary"
+                    >Réserver une table</a
+                >
+                <a href="#menu" class="btn-ghost">Découvrir le menu</a>
+            </div>
+            <div class="hero-scroll">
+                <div class="scroll-dot"></div>
+                Découvrir
+            </div>
+        </section>
+
+        <!-- PHILOSOPHIE -->
+        <section>
+            <div id="philosophie">
+                <div class="philo-visual reveal">
+                    <div class="philo-corner tl"></div>
+                    <div class="philo-corner tr"></div>
+                    <div class="philo-corner bl"></div>
+                    <div class="philo-corner br"></div>
+                    <div class="amb-pattern">✦</div>
+                    <div class="philo-ornament">
+                        <div class="philo-ornament-inner">O</div>
+                    </div>
+                </div>
+                <div class="philo-text">
+                    <p class="section-label reveal">Notre philosophie</p>
+                    <h2 class="section-title reveal reveal-delay-1">
+                        L'obscurité<br />comme
+                        <em
+                            style="
+                                font-family:
+                                    &quot;Cormorant Garamond&quot;, serif;
+                                font-style: italic;
+                            "
+                            >toile</em
+                        >
+                    </h2>
+                    <div class="gold-rule reveal reveal-delay-2"></div>
+                    <div class="reveal reveal-delay-3">
+                        <p>
+                            Obsidian est né d'une conviction : la lumière
+                            tamisée révèle ce que le jour dissimule. Dans notre
+                            salle aux voûtes de pierre noire,
+                            <strong>chaque assiette devient une œuvre</strong>,
+                            chaque geste du chef une partition silencieuse.
+                        </p>
+                        <p>
+                            Nous travaillons avec les producteurs de la région
+                            Auvergne-Rhône-Alpes, choisis pour leur engagement
+                            envers
+                            <strong>l'excellence et l'authenticité</strong>. Le
+                            menu évolue avec les saisons, jamais avec les modes.
+                        </p>
+                        <p>
+                            Ouvert du mercredi au samedi,
+                            <strong>un seul service par soir.</strong>
+                            Vingt-quatre couverts. Une expérience totale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU -->
+        <section id="menu">
+            <div class="menu-inner">
+                <div class="menu-header">
+                    <p class="section-label reveal">Printemps 2025</p>
+                    <h2 class="section-title reveal reveal-delay-1">
+                        Le menu de saison
+                    </h2>
+                </div>
+
+                <div class="menu-tabs reveal reveal-delay-2">
+                    <button class="menu-tab active" data-panel="entrees">
+                        Entrées
+                    </button>
+                    <button class="menu-tab" data-panel="plats">Plats</button>
+                    <button class="menu-tab" data-panel="desserts">
+                        Desserts
+                    </button>
+                </div>
+
+                <div class="menu-panel active" id="panel-entrees">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Caviar d'aubergine fumée</span
+                            >
+                            <span class="menu-item-price">38 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Crème aigre de brebis, huile d'olive noire, chips de
+                            sarrasin soufflé
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Tartare de cerf du Vercors</span
+                            >
+                            <span class="menu-item-price">46 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Jaune d'œuf confit, câpres sauvages, cendre de pin,
+                            brioche beurrée
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Consommé de champignons noirs</span
+                            >
+                            <span class="menu-item-price">32 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Truffe noire du Tricastin, mousse de lait de brebis,
+                            herbes sauvages
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Noix de Saint-Jacques, encre</span
+                            >
+                            <span class="menu-item-price">52 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Émulsion de chou-fleur rôti, encre de seiche, poudre
+                            d'algues
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Foie gras en croûte de sel</span
+                            >
+                            <span class="menu-item-price">58 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Compotée de figues noires, pain d'épices maison,
+                            fleur de sel du Guérande
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Velouté d'asperges sauvages</span
+                            >
+                            <span class="menu-item-price">29 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Huile de ciboulette, œuf de caille poché,
+                            croustillant de jambon noir
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-panel" id="panel-plats">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Filet de bœuf Wagyu A5</span
+                            >
+                            <span class="menu-item-price">98 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Jus de bœuf au vin rouge de Crozes-Hermitage, pomme
+                            soufflée, cresson
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Pigeon en croûte de charbon</span
+                            >
+                            <span class="menu-item-price">74 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Farce de foie gras et cèpes, purée à l'encre, jus
+                            réduit au kirsch
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Homard bleu rôti entier</span
+                            >
+                            <span class="menu-item-price">86 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Beurre d'agrumes et algues, risotto noir à l'encre,
+                            bisque concentrée
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Sole meunière revisitée</span
+                            >
+                            <span class="menu-item-price">68 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Câpres, beurre noisette fumé, caviar d'Aquitaine,
+                            pomme de terre vitelotte
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Ris de veau doré</span>
+                            <span class="menu-item-price">76 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Morels à la crème, asperges vertes, jus de veau
+                            truffé, tuile de parmesan
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Menu Dégustation (7 actes)</span
+                            >
+                            <span class="menu-item-price">185 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            L'expérience complète — accord mets et vins en
+                            option · +95 €
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-panel" id="panel-desserts">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Soufflé au chocolat grand cru</span
+                            >
+                            <span class="menu-item-price">24 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Valrhona Guanaja 70%, glace à la vanille de
+                            Madagascar, tuile dentelle
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Tarte tatin inversée</span
+                            >
+                            <span class="menu-item-price">22 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Pommes du Pilat caramélisées, crème fraîche
+                            d'Isigny, caramel beurre salé
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Poire pochée au vin d'Hermitage</span
+                            >
+                            <span class="menu-item-price">26 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Crème légère au poivre de Timut, gelée de vin rouge,
+                            amandes effilées
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Assiette de fromages affinés</span
+                            >
+                            <span class="menu-item-price">28 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Sélection de Bernard Antony, pain aux noix maison,
+                            miel de châtaignier
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Mignardises obsidiennes</span
+                            >
+                            <span class="menu-item-price">18 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Chocolats noirs, caramels maison, pâtes de fruits,
+                            guimauves au yuzu
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name"
+                                >Crème brûlée à la fève Tonka</span
+                            >
+                            <span class="menu-item-price">21 €</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Croûte caramélisée au sucre de canne roux, sablé
+                            breton, coulis de fruits noirs
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AMBIANCE -->
+        <section>
+            <div id="ambiance">
+                <p class="section-label reveal">L'espace</p>
+                <h2 class="section-title reveal reveal-delay-1">
+                    Un écrin de<br />pierre et d'ombre
+                </h2>
+                <div class="ambiance-grid">
+                    <div class="amb-cell amb-cell-1 reveal">
+                        <div class="amb-pattern">✦</div>
+                        <div class="amb-overlay"></div>
+                        <span class="amb-label">La salle principale</span>
+                    </div>
+                    <div class="amb-cell reveal reveal-delay-1">
+                        <div class="amb-pattern" style="font-size: 5rem">
+                            🍷
+                        </div>
+                        <div class="amb-overlay"></div>
+                        <span class="amb-label">La cave</span>
+                    </div>
+                    <div class="amb-cell reveal reveal-delay-2">
+                        <div class="amb-pattern" style="font-size: 5rem">◈</div>
+                        <div class="amb-overlay"></div>
+                        <span class="amb-label">Le salon privé</span>
+                    </div>
+                    <div class="amb-cell reveal reveal-delay-1">
+                        <div class="amb-pattern" style="font-size: 5rem">⬟</div>
+                        <div class="amb-overlay"></div>
+                        <span class="amb-label">Le bar à cocktails</span>
+                    </div>
+                    <div class="amb-cell reveal reveal-delay-2">
+                        <div class="amb-pattern" style="font-size: 5rem">✿</div>
+                        <div class="amb-overlay"></div>
+                        <span class="amb-label">La terrasse</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RÉSERVATION -->
+        <section id="reservation">
+            <div class="res-inner">
+                <p class="section-label reveal">Réservation</p>
+                <h2 class="section-title reveal reveal-delay-1">
+                    Votre soirée<br />commence ici
+                </h2>
+                <div
+                    class="gold-rule reveal reveal-delay-2"
+                    style="margin-left: auto; margin-right: auto"
+                ></div>
+                <p class="reveal reveal-delay-3">
+                    Chaque table est une promesse. Nous n'acceptons pas de
+                    réservations à la dernière minute — pour que chaque
+                    expérience soit soigneusement préparée en amont.
+                </p>
+
+                <form class="res-form reveal" id="resForm">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Nom & prénom</label>
+                            <input
+                                type="text"
+                                placeholder="Jean Dupont"
+                                required
+                            />
+                        </div>
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input
+                                type="email"
+                                placeholder="jean@exemple.fr"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Date souhaitée</label>
+                            <input type="date" required />
+                        </div>
+                        <div class="form-field">
+                            <label>Nombre de couverts</label>
+                            <select required>
+                                <option value="">— Sélectionner —</option>
+                                <option>1 personne</option>
+                                <option>2 personnes</option>
+                                <option>3 personnes</option>
+                                <option>4 personnes</option>
+                                <option>5 à 8 personnes</option>
+                                <option>Privatisation (9–24)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        Envoyer ma demande
+                    </button>
+                </form>
+
+                <div class="res-contact reveal">
+                    <div class="contact-item">
+                        <span class="ci-label">Téléphone</span>
+                        <span class="ci-val">04 72 XX XX XX</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-label">Email</span>
+                        <span class="ci-val">contact@obsidian-lyon.fr</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-label">Adresse</span>
+                        <span class="ci-val">12 rue Saint-Jean, Lyon 5e</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-label">Horaires</span>
+                        <span class="ci-val">Mer–Sam · 19h30</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-logo">OBSIDIAN</div>
+            <p class="footer-copy">
+                © 2025 Obsidian · Lyon · Tous droits réservés
+            </p>
+            <div class="footer-social">
+                <a href="#">IG</a>
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+            </div>
+        </footer>
+
+        <!-- TOAST -->
+        <div class="toast" id="toast">
+            Demande envoyée — nous vous répondons sous 24h
+        </div>
+
+        <script>
+            // Navbar scroll
+            const navbar = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                navbar.classList.toggle("scrolled", window.scrollY > 60);
+            });
+
+            // Reveal on scroll
+            const reveals = document.querySelectorAll(".reveal");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add("visible");
+                            observer.unobserve(e.target);
+                        }
+                    });
+                },
+                { threshold: 0.12 },
+            );
+            reveals.forEach((el) => observer.observe(el));
+
+            // Menu tabs
+            document.querySelectorAll(".menu-tab").forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    document
+                        .querySelectorAll(".menu-tab")
+                        .forEach((t) => t.classList.remove("active"));
+                    document
+                        .querySelectorAll(".menu-panel")
+                        .forEach((p) => p.classList.remove("active"));
+                    tab.classList.add("active");
+                    document
+                        .getElementById("panel-" + tab.dataset.panel)
+                        .classList.add("active");
+                });
+            });
+
+            // Reservation form
+            document
+                .getElementById("resForm")
+                .addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    const toast = document.getElementById("toast");
+                    toast.classList.add("show");
+                    setTimeout(() => toast.classList.remove("show"), 4000);
+                    e.target.reset();
+                });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach((a) => {
+                a.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        a.getAttribute("href"),
+                    );
+                    if (target) target.scrollIntoView({ behavior: "smooth" });
+                });
+            });
+        </script>
+    </body>
+</html>
