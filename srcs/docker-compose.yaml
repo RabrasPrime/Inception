@@ -46,6 +46,9 @@ services:
         networks:
             - inception
         restart: always
+    redis:
+        container_name: redis
+        image: redis
 
 secrets:
     db-password:
