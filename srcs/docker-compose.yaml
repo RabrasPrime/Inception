@@ -43,6 +43,8 @@ services:
             - wordpress_data:/var/www/html
         ports:
             - 443:443
+            - "80:80"
+            - "8080:8080"
         networks:
             - inception
         restart: always

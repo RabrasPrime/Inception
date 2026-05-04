@@ -1,0 +1,40 @@
+.
+├── Makefile
+├── srcs
+│   ├── docker-compose.yaml
+│   ├── requirements
+│   │   ├── bonus
+│   │   │   ├── adminer
+│   │   │   │   └── Dockerfile
+│   │   │   ├── cadvisor
+│   │   │   │   └── Dockerfile
+│   │   │   ├── redis
+│   │   │   │   ├── Dockerfile
+│   │   │   │   └── redis.conf
+│   │   │   ├── vsftpd
+│   │   │   │   ├── Dockerfile
+│   │   │   │   ├── entrypoint.sh
+│   │   │   │   └── vsftpd.conf
+│   │   │   └── website
+│   │   │       ├── index.html
+│   │   │       └── style.css
+│   │   ├── mariadb
+│   │   │   ├── Dockerfile
+│   │   │   └── entrypoint.sh
+│   │   ├── nginx
+│   │   │   ├── conf
+│   │   │   │   └── nginx.conf
+│   │   │   ├── Dockerfile
+│   │   │   └── entrypoint.sh
+│   │   └── wordpress
+│   │       ├── Dockerfile
+│   │       └── entrypoint.sh
+│   └── secrets
+│       ├── db-password
+│       ├── db_password
+│       ├── db_root_password
+│       ├── ftp-password
+│       └── wp_admin_password
+└── tree
+
+14 directories, 24 files

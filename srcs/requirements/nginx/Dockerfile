@@ -6,6 +6,6 @@ RUN apk update && apk add --no-cache nginx openssl && \
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY --chmod=+x entrypoint.sh /
 
-EXPOSE 443
+EXPOSE 80 443
 
 ENTRYPOINT ["/entrypoint.sh"]
