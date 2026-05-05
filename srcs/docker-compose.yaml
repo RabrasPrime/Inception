@@ -37,7 +37,8 @@ services:
         image: nginx
         hostname: ${HOST_NAME}
         build:
-            context: requirements/nginx/
+            context: requirements/
+            dockerfile: nginx/Dockerfile
         depends_on:
             - wordpress
         volumes:
@@ -57,6 +58,7 @@ services:
     ftp:
         container_name: ftp
         image: ftp
+        pull_policy: never
         build:
             context: requirements/bonus/vsftpd/
         depends_on:
@@ -95,6 +97,7 @@ services:
 
     cadvisor:
         container_name: cadvisor
+        pull_policy: never
         image: cadvisor
         build:
             context: requirements/bonus/cadvisor/

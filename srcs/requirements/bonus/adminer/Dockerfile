@@ -7,7 +7,7 @@ RUN apk update && apk add --no-cache \
     php83-curl \
     php83-json \
     curl && \
-    ln -s /usr/bin/php83 /usr/bin/php
+    ln -sf /usr/bin/php83 /usr/bin/php
 
 
 WORKDIR /var/www/html
