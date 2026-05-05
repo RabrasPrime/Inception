@@ -21,6 +21,7 @@ services:
             context: requirements/wordpress/
         depends_on:
             - mariadb
+            - redis
         volumes:
             - wordpress_data:/var/www/html
         secrets:
@@ -45,12 +46,66 @@ services:
             - 443:443
             - "80:80"
             - "8080:8080"
+            - "8081:8081"
+            - "8082:8082"
         networks:
             - inception
         restart: always
+
+    ####################### BONUS  #######################
+
+    ftp:
+        container_name: ftp
+        image: ftp
+        build:
+            context: requirements/bonus/vsftpd/
+        depends_on:
+            - wordpress
+        volumes:
+            - wordpress_data:/var/www/html
+        ports:
+            - "21:21"
+            - "21100-21110:21100-21110"
+        secrets:
+            - ftp-password
+        env_file: .env
+        networks:
+            - inception
+        restart: always
+
+    adminer:
+        container_name: adminer
+        image: adminer
+        build:
+            context: requirements/bonus/adminer/
+        depends_on:
+            - mariadb
+        networks:
+            - inception
+        restart: always
+
     redis:
         container_name: redis
         image: redis
+        build:
+            context: requirements/bonus/redis/
+        networks:
+            - inception
+        restart: always
+
+    cadvisor:
+        container_name: cadvisor
+        image: cadvisor
+        build:
+            context: requirements/bonus/cadvisor/
+        volumes:
+            - /:/rootfs:ro
+            - /var/run:/var/run:ro
+            - /sys:/sys:ro
+            - /var/lib/docker/:/var/lib/docker:ro
+        networks:
+            - inception
+        restart: always
 
 secrets:
     db-password:
@@ -59,6 +114,8 @@ secrets:
         file: secrets/db_root_password
     wp-admin-password:
         file: secrets/wp_admin_password
+    ftp-password:
+        file: secrets/ftp-password
 
 networks:
     inception:

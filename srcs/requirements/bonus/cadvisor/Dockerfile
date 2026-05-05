@@ -10,8 +10,8 @@ RUN wget -O /usr/local/bin/cadvisor \
     https://github.com/google/cadvisor/releases/download/${CADVISOR_VERSION}/cadvisor-${CADVISOR_VERSION}-linux-amd64 && \
     chmod +x /usr/local/bin/cadvisor
 
-EXPOSE 8080
+EXPOSE 8081
 
 ENTRYPOINT ["/usr/local/bin/cadvisor"]
 
-CMD ["-port=8080"]
+CMD ["-port=8081"]
