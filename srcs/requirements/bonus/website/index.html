@@ -10,7 +10,810 @@
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="style.css" />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --noir: #0a0806;
+                --charbon: #111008;
+                --cendre: #1a1710;
+                --or: #c9a84c;
+                --or-pale: #e8c97a;
+                --ivoire: #f0ead8;
+                --ivoire-mute: #a89e85;
+                --rouge: #8b1a1a;
+                --blanc: #faf8f2;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background: var(--noir);
+                color: var(--ivoire);
+                font-family: "Raleway", sans-serif;
+                font-weight: 300;
+                overflow-x: hidden;
+            }
+
+            /* ── NAV ── */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.5rem 4rem;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(10, 8, 6, 0.95) 0%,
+                    transparent 100%
+                );
+                transition: background 0.4s;
+            }
+            nav.scrolled {
+                background: rgba(10, 8, 6, 0.98);
+            }
+
+            .nav-logo {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.8rem;
+                font-weight: 300;
+                letter-spacing: 0.35em;
+                color: var(--or);
+                text-decoration: none;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 2.5rem;
+                list-style: none;
+            }
+            .nav-links a {
+                color: var(--ivoire-mute);
+                text-decoration: none;
+                font-size: 0.72rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                transition: color 0.3s;
+            }
+            .nav-links a:hover {
+                color: var(--or);
+            }
+
+            .nav-reserve {
+                border: 1px solid var(--or);
+                padding: 0.6rem 1.6rem;
+                color: var(--or) !important;
+                letter-spacing: 0.18em;
+                transition:
+                    background 0.3s,
+                    color 0.3s !important;
+            }
+            .nav-reserve:hover {
+                background: var(--or) !important;
+                color: var(--noir) !important;
+            }
+
+            /* ── HERO ── */
+            #hero {
+                height: 100vh;
+                min-height: 700px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-bg {
+                position: absolute;
+                inset: 0;
+                background:
+                    radial-gradient(
+                        ellipse 80% 60% at 50% 40%,
+                        rgba(201, 168, 76, 0.06) 0%,
+                        transparent 65%
+                    ),
+                    radial-gradient(
+                        ellipse 50% 80% at 20% 80%,
+                        rgba(139, 26, 26, 0.12) 0%,
+                        transparent 55%
+                    ),
+                    radial-gradient(
+                        ellipse 60% 50% at 80% 20%,
+                        rgba(139, 26, 26, 0.08) 0%,
+                        transparent 50%
+                    ),
+                    var(--noir);
+            }
+
+            .hero-line {
+                width: 1px;
+                height: 80px;
+                background: linear-gradient(to bottom, transparent, var(--or));
+                margin: 0 auto 2.5rem;
+                opacity: 0;
+                animation: fadeDown 1.2s 0.3s forwards;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.68rem;
+                letter-spacing: 0.45em;
+                text-transform: uppercase;
+                color: var(--or);
+                margin-bottom: 1.5rem;
+                opacity: 0;
+                animation: fadeUp 1s 0.6s forwards;
+            }
+
+            .hero-title {
+                font-family: "Cormorant Garamond", serif;
+                font-size: clamp(5rem, 12vw, 10rem);
+                font-weight: 300;
+                line-height: 0.9;
+                letter-spacing: 0.05em;
+                color: var(--ivoire);
+                opacity: 0;
+                animation: fadeUp 1.2s 0.8s forwards;
+            }
+
+            .hero-title em {
+                font-style: italic;
+                color: var(--or-pale);
+            }
+
+            .hero-sub {
+                font-size: 0.78rem;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--ivoire-mute);
+                margin-top: 2rem;
+                opacity: 0;
+                animation: fadeUp 1s 1.1s forwards;
+            }
+
+            .hero-cta {
+                display: flex;
+                gap: 1.5rem;
+                margin-top: 3rem;
+                opacity: 0;
+                animation: fadeUp 1s 1.3s forwards;
+            }
+
+            .btn-primary {
+                padding: 1rem 2.8rem;
+                background: var(--or);
+                color: var(--noir);
+                font-family: "Raleway", sans-serif;
+                font-size: 0.7rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 500;
+                transition:
+                    background 0.3s,
+                    transform 0.2s;
+            }
+            .btn-primary:hover {
+                background: var(--or-pale);
+                transform: translateY(-2px);
+            }
+
+            .btn-ghost {
+                padding: 1rem 2.8rem;
+                border: 1px solid rgba(201, 168, 76, 0.4);
+                color: var(--ivoire);
+                font-family: "Raleway", sans-serif;
+                font-size: 0.7rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 300;
+                transition:
+                    border-color 0.3s,
+                    color 0.3s,
+                    transform 0.2s;
+            }
+            .btn-ghost:hover {
+                border-color: var(--or);
+                color: var(--or);
+                transform: translateY(-2px);
+            }
+
+            .hero-scroll {
+                position: absolute;
+                bottom: 2.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.6rem;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--ivoire-mute);
+                opacity: 0;
+                animation: fadeUp 1s 1.8s forwards;
+            }
+            .scroll-dot {
+                width: 1px;
+                height: 40px;
+                background: linear-gradient(
+                    to bottom,
+                    var(--ivoire-mute),
+                    transparent
+                );
+                animation: scrollPulse 2s 2s infinite;
+            }
+
+            /* ── SECTIONS COMMUNES ── */
+            section {
+                padding: 8rem 4rem;
+            }
+
+            .section-label {
+                font-size: 0.62rem;
+                letter-spacing: 0.5em;
+                text-transform: uppercase;
+                color: var(--or);
+                margin-bottom: 1rem;
+            }
+
+            .section-title {
+                font-family: "Cormorant Garamond", serif;
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                font-weight: 300;
+                line-height: 1.1;
+                color: var(--ivoire);
+            }
+
+            .gold-rule {
+                width: 60px;
+                height: 1px;
+                background: var(--or);
+                margin: 2rem 0;
+            }
+
+            /* ── PHILOSOPHIE ── */
+            #philosophie {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8rem;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .philo-visual {
+                position: relative;
+                aspect-ratio: 3/4;
+                background:
+                    radial-gradient(
+                        ellipse 70% 60% at 40% 50%,
+                        rgba(201, 168, 76, 0.08) 0%,
+                        transparent 70%
+                    ),
+                    var(--cendre);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .philo-ornament {
+                width: 200px;
+                height: 200px;
+                border: 1px solid rgba(201, 168, 76, 0.2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            .philo-ornament::before {
+                content: "";
+                position: absolute;
+                inset: 15px;
+                border: 1px solid rgba(201, 168, 76, 0.15);
+                border-radius: 50%;
+            }
+            .philo-ornament-inner {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 4rem;
+                color: var(--or);
+                opacity: 0.5;
+            }
+
+            .philo-corner {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                border-color: var(--or);
+                border-style: solid;
+                opacity: 0.4;
+            }
+            .philo-corner.tl {
+                top: 1.5rem;
+                left: 1.5rem;
+                border-width: 1px 0 0 1px;
+            }
+            .philo-corner.tr {
+                top: 1.5rem;
+                right: 1.5rem;
+                border-width: 1px 1px 0 0;
+            }
+            .philo-corner.bl {
+                bottom: 1.5rem;
+                left: 1.5rem;
+                border-width: 0 0 1px 1px;
+            }
+            .philo-corner.br {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                border-width: 0 1px 1px 0;
+            }
+
+            .philo-text p {
+                color: var(--ivoire-mute);
+                line-height: 1.9;
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+            .philo-text p strong {
+                color: var(--ivoire);
+                font-weight: 400;
+            }
+
+            /* ── MENU ── */
+            #menu {
+                background: var(--charbon);
+            }
+            .menu-inner {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .menu-header {
+                text-align: center;
+                margin-bottom: 5rem;
+            }
+
+            .menu-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 0;
+                margin-bottom: 4rem;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            }
+
+            .menu-tab {
+                padding: 0.8rem 2.5rem;
+                font-size: 0.68rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--ivoire-mute);
+                cursor: pointer;
+                border-bottom: 2px solid transparent;
+                margin-bottom: -1px;
+                transition: all 0.3s;
+                background: none;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                font-family: "Raleway", sans-serif;
+            }
+            .menu-tab.active {
+                color: var(--or);
+                border-bottom-color: var(--or);
+            }
+            .menu-tab:hover {
+                color: var(--ivoire);
+            }
+
+            .menu-panel {
+                display: none;
+            }
+            .menu-panel.active {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0 6rem;
+            }
+
+            .menu-item {
+                padding: 1.8rem 0;
+                border-bottom: 1px solid rgba(240, 234, 216, 0.06);
+            }
+
+            .menu-item-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 0.5rem;
+            }
+
+            .menu-item-name {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.15rem;
+                font-weight: 400;
+                color: var(--ivoire);
+            }
+
+            .menu-item-price {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1rem;
+                color: var(--or);
+                white-space: nowrap;
+            }
+
+            .menu-item-desc {
+                font-size: 0.78rem;
+                color: var(--ivoire-mute);
+                line-height: 1.7;
+                font-style: italic;
+                font-family: "Cormorant Garamond", serif;
+            }
+
+            /* ── AMBIANCE ── */
+            #ambiance {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .ambiance-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr;
+                grid-template-rows: 250px 250px;
+                gap: 1rem;
+                margin-top: 4rem;
+            }
+
+            .amb-cell {
+                background: var(--cendre);
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                align-items: flex-end;
+                padding: 1.5rem;
+            }
+
+            .amb-cell:first-child {
+                grid-row: span 2;
+            }
+
+            .amb-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    to top,
+                    rgba(10, 8, 6, 0.7) 0%,
+                    transparent 60%
+                );
+            }
+
+            .amb-label {
+                position: relative;
+                z-index: 1;
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.1rem;
+                color: var(--ivoire);
+                font-style: italic;
+            }
+
+            .amb-pattern {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Cormorant Garamond", serif;
+                font-size: 8rem;
+                color: rgba(201, 168, 76, 0.04);
+                font-weight: 300;
+            }
+
+            .amb-cell-1 .amb-pattern {
+                font-size: 14rem;
+            }
+
+            /* ── RÉSERVATION ── */
+            #reservation {
+                background:
+                    radial-gradient(
+                        ellipse 60% 70% at 50% 50%,
+                        rgba(201, 168, 76, 0.05) 0%,
+                        transparent 65%
+                    ),
+                    var(--noir);
+                text-align: center;
+            }
+            .res-inner {
+                max-width: 640px;
+                margin: 0 auto;
+            }
+
+            .res-inner p {
+                color: var(--ivoire-mute);
+                font-size: 0.9rem;
+                line-height: 1.9;
+                margin: 1.5rem 0 3rem;
+            }
+
+            .res-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .form-field {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+
+            .form-field label {
+                font-size: 0.62rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--ivoire-mute);
+            }
+
+            .form-field input,
+            .form-field select {
+                background: var(--cendre);
+                border: 1px solid rgba(240, 234, 216, 0.1);
+                padding: 0.85rem 1rem;
+                color: var(--ivoire);
+                font-family: "Raleway", sans-serif;
+                font-size: 0.85rem;
+                font-weight: 300;
+                outline: none;
+                transition: border-color 0.3s;
+                appearance: none;
+            }
+
+            .form-field input:focus,
+            .form-field select:focus {
+                border-color: var(--or);
+            }
+
+            .form-field input::placeholder {
+                color: rgba(168, 158, 133, 0.4);
+            }
+
+            .form-field select option {
+                background: var(--charbon);
+            }
+
+            .btn-submit {
+                padding: 1.1rem;
+                background: var(--or);
+                color: var(--noir);
+                font-family: "Raleway", sans-serif;
+                font-size: 0.72rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+                transition:
+                    background 0.3s,
+                    transform 0.2s;
+            }
+            .btn-submit:hover {
+                background: var(--or-pale);
+                transform: translateY(-1px);
+            }
+
+            .res-contact {
+                display: flex;
+                justify-content: center;
+                gap: 3rem;
+                margin-top: 3rem;
+                padding-top: 3rem;
+                border-top: 1px solid rgba(240, 234, 216, 0.06);
+            }
+
+            .contact-item {
+                text-align: center;
+            }
+            .contact-item .ci-label {
+                font-size: 0.6rem;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--or);
+                display: block;
+                margin-bottom: 0.4rem;
+            }
+            .contact-item .ci-val {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.05rem;
+                color: var(--ivoire);
+            }
+
+            /* ── FOOTER ── */
+            footer {
+                background: #050403;
+                padding: 3rem 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-top: 1px solid rgba(201, 168, 76, 0.1);
+            }
+
+            .footer-logo {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.4rem;
+                color: var(--or);
+                letter-spacing: 0.3em;
+            }
+
+            .footer-copy {
+                font-size: 0.68rem;
+                color: rgba(168, 158, 133, 0.4);
+                letter-spacing: 0.12em;
+            }
+
+            .footer-social {
+                display: flex;
+                gap: 1.5rem;
+            }
+            .footer-social a {
+                width: 36px;
+                height: 36px;
+                border: 1px solid rgba(201, 168, 76, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--ivoire-mute);
+                text-decoration: none;
+                font-size: 0.7rem;
+                letter-spacing: 0.05em;
+                transition: all 0.3s;
+            }
+            .footer-social a:hover {
+                border-color: var(--or);
+                color: var(--or);
+            }
+
+            /* ── ANIMATIONS ── */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(24px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes fadeDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes scrollPulse {
+                0%,
+                100% {
+                    opacity: 0.4;
+                }
+                50% {
+                    opacity: 1;
+                }
+            }
+
+            .reveal {
+                opacity: 0;
+                transform: translateY(32px);
+                transition:
+                    opacity 0.9s ease,
+                    transform 0.9s ease;
+            }
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .reveal-delay-1 {
+                transition-delay: 0.1s;
+            }
+            .reveal-delay-2 {
+                transition-delay: 0.22s;
+            }
+            .reveal-delay-3 {
+                transition-delay: 0.36s;
+            }
+
+            /* ── NOTIFICATION ── */
+            .toast {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                z-index: 200;
+                background: var(--or);
+                color: var(--noir);
+                padding: 1rem 2rem;
+                font-size: 0.75rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                font-weight: 500;
+                transform: translateY(80px);
+                opacity: 0;
+                transition: all 0.4s;
+            }
+            .toast.show {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            /* ── RESPONSIVE ── */
+            @media (max-width: 900px) {
+                nav {
+                    padding: 1.2rem 2rem;
+                }
+                .nav-links {
+                    display: none;
+                }
+                section {
+                    padding: 5rem 2rem;
+                }
+                #philosophie {
+                    grid-template-columns: 1fr;
+                    gap: 3rem;
+                }
+                .philo-visual {
+                    display: none;
+                }
+                .menu-panel.active {
+                    grid-template-columns: 1fr;
+                }
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+                .ambiance-grid {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto;
+                }
+                .amb-cell:first-child {
+                    grid-column: span 2;
+                    grid-row: auto;
+                    height: 220px;
+                }
+                footer {
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    text-align: center;
+                }
+                .res-contact {
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- NAV -->
