@@ -9,31 +9,15 @@ setup:
 	@mkdir -p ~/data/wordpress
 
 		@if [ ! -f $(SECRETS_DIR)/db_password.txt ]; then \
-		echo "hunter" > $(SECRETS_DIR)/db_password.txt; \
+		echo "hunter" > $(SECRETS_DIR)/db_password; \
 	fi
 
 	@if [ ! -f $(SECRETS_DIR)/wp_admin_user.txt ]; then \
-		echo "tjooris" > $(SECRETS_DIR)/wp_admin_user.txt; \
+		echo "tjooris" > $(SECRETS_DIR)/wp_admin_user; \
 	fi
 
 	@if [ ! -f $(SECRETS_DIR)/wp_admin_password.txt ]; then \
-		echo "password" > $(SECRETS_DIR)/wp_admin_password.txt; \
-	fi
-
-	@if [ ! -f $(SECRETS_DIR)/wp_admin_mail.txt ]; then \
-		echo "tjooris@hotmail.fr" > $(SECRETS_DIR)/wp_admin_mail.txt; \
-	fi
-
-	@if [ ! -f $(SECRETS_DIR)/wp_user_user.txt ]; then \
-		echo "marvin" > $(SECRETS_DIR)/wp_user_user.txt; \
-	fi
-
-	@if [ ! -f $(SECRETS_DIR)/wp_user_password.txt ]; then \
-		echo "hunter" > $(SECRETS_DIR)/wp_user_password.txt; \
-	fi
-
-	@if [ ! -f $(SECRETS_DIR)/wp_user_mail.txt ]; then \
-		echo "marvin@marvin.fr" > $(SECRETS_DIR)/wp_user_mail.txt; \
+		echo "password" > $(SECRETS_DIR)/wp_admin_password; \
 	fi
 
 	@if [ ! -f $(ENV_FILE) ]; then \
