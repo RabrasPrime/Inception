@@ -3,6 +3,9 @@ NAME = inception
 SECRETS_DIR = srcs/secrets
 ENV_FILE = srcs/.env
 
+all: setup
+	cd srcs/ ; docker compose up --build -d
+
 setup:
 	@echo "setup";
 	@mkdir -p ~/data/db
