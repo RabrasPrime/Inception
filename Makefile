@@ -1,6 +1,6 @@
 NAME = inception
 
-SECRETS_DIR = srcs/.secrets/
+SECRETS_DIR = srcs/secrets
 ENV_FILE = srcs/.env
 
 setup:
