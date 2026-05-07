@@ -99,6 +99,7 @@ services:
         container_name: cadvisor
         pull_policy: never
         image: cadvisor
+        privileged: true
         build:
             context: requirements/bonus/cadvisor/
         volumes:
