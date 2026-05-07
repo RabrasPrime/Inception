@@ -10,8 +10,6 @@ setup:
 	@echo "setup";
 	@mkdir -p ~/data/db
 	@mkdir -p ~/data/wp
-	@chmod 755 /home/tjooris/data/wp
-	@chmod 755 /home/tjooris/data/db
 
 		@if [ ! -f $(SECRETS_DIR)/db_password.txt ]; then \
 		echo "hunter" > $(SECRETS_DIR)/db_password; \
