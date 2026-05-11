@@ -1,13 +1,5 @@
 *This project has been created by Tjooris.*
 
-<!-- These are comments for my custom fonts and icons. -->
-<!-- 𝔸 𝔹 ℂ 𝔻 𝔼 𝔽 𝔾 ℍ 𝕀 𝕁 𝕂 𝕃 𝕄 ℕ 𝕆 ℙ ℚ ℝ 𝕊 𝕋 𝕌 𝕍 𝕎 𝕏 𝕐 ℤ -->
-<!-- 𝕒 𝕓 𝕔 𝕕 𝕖 𝕗 𝕘 𝕙 𝕚 𝕛 𝕜 𝕝 𝕞 𝕟 𝕠 𝕡 𝕢 𝕣 𝕤 𝕥 𝕦 𝕧 𝕨 𝕩 𝕪 𝕫  -->
-<!-- 𝟘 𝟙 𝟚 𝟛 𝟜 𝟝 𝟞 𝟟 𝟠 𝟡 -->
-<!-- 📘 🗎 🖋 👀 🗣 … -->
-<!-- Double-struck font -->
-<!-- 𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡 -->
-
 <!-- [Tag-test]: url "on hover" -->
 [tag_icon_md]: https://skillicons.dev/icons?i=md
 
@@ -20,6 +12,21 @@
 		<h1>𝕊ummary</h1>
 	</summary>
 <blockquote>
+
+- [ℝesume](#resume)
+- [𝕎hat is docker ?](#head)
+	- [𝔻ocker](#docker)
+	- [ℂontainer](#container)
+	- [𝕀mage](#image)
+	- [𝕍olume](#volume)
+	- [𝕌tility](#utility)
+- [ℙresentation](#presentation)
+	- [ℍow to create a container](#tutorial)
+	- [𝔸ll containers](#containers)
+- [𝕀nstruction](#Instruction)
+- [ℝesources](#Resources)
+
+
 
 </details>
 
@@ -41,7 +48,6 @@ This project has for purpose to use docker to have a "website" on wordpress, usi
 	</summary>
 
 <blockquote>
-
 <details id="docker">
 	<summary>
 		<h3>𝔻ocker</h3>
@@ -147,7 +153,7 @@ To create a container, we use a Dockerfile and an entrypoint script.
 <strong>Entrypoint</strong>: Once the environment is set up via the Dockerfile, the entrypoint.sh script is executed. Its role is to perform the final runtime configurations (like setting up database users or checking service connectivity) and then launch the main process to keep the container running.
 </details>
 
-<details>
+<details id="containers">
 	<summary>
 		<h3>𝔸ll containers</h3>
 	</summary>
