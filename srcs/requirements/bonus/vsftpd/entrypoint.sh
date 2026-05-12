@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 set -e
-FTP_PASSWORD=$(cat /run/secrets/ftp-password | tr -d '\n')
+FTP_PASSWORD=$(cat /run/secrets/ftp_password | tr -d '\n')
 
 mkdir -p /var/run/vsftpd/empty
 chown root:root /var/run/vsftpd/empty

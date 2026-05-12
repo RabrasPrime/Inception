@@ -23,11 +23,23 @@ setup:
 		echo "password" > $(SECRETS_DIR)/wp_admin_password; \
 	fi
 
+	@if [ ! -f $(SECRETS_DIR)/ftp_password ]; then \
+		echo "password" > $(SECRETS_DIR)/ftp_password; \
+	fi
+
 	@if [ ! -f $(ENV_FILE) ]; then \
-		echo "DB_NAME=MyDataBase" >> $(ENV_FILE); \
-		echo "DB_USER=db_user" >> $(ENV_FILE); \
-		echo "DATA_DIR=/var/lib/mysql" >> $(ENV_FILE); \
+		echo "HOST_NAME=tjooris.42.fr" >> $(ENV_FILE); \
+		echo "DB_NAME=wordpress" >> $(ENV_FILE); \
+		echo "DB_USER=wp_user" >> $(ENV_FILE); \
 		echo "DB_HOST=mariadb" >> $(ENV_FILE); \
+		echo "DATA_DIR=/var/lib/mysql" >> $(ENV_FILE); \
+		echo "WP_ADMIN=marvin" >> $(ENV_FILE); \
+		echo "WP_EMAIL=marvin@test.com" >> $(ENV_FILE); \
+		echo "WP_URL=https://tjooris.42.fr" >> $(ENV_FILE); 
+		echo "WP_TITLE=Inception" >> $(ENV_FILE); 
+		echo "WP_REDIS_HOST=redis" >> $(ENV_FILE); 
+		echo "WP_REDIS_PORT=6379" >> $(ENV_FILE); 
+		echo "FTP_USER=ftp_user" >> $(ENV_FILE); 
 	fi
 
 up:

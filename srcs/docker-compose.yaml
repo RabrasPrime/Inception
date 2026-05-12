@@ -119,7 +119,7 @@ secrets:
     wp-admin-password:
         file: secrets/wp_admin_password
     ftp-password:
-        file: secrets/ftp-password
+        file: secrets/ftp_password
 
 networks:
     inception:
