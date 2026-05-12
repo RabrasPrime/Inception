@@ -11,15 +11,15 @@ setup:
 	@mkdir -p ~/data/db
 	@mkdir -p ~/data/wp
 
-		@if [ ! -f $(SECRETS_DIR)/db_password.txt ]; then \
+		@if [ ! -f $(SECRETS_DIR)/db_password ]; then \
 		echo "hunter" > $(SECRETS_DIR)/db_password; \
 	fi
 
-	@if [ ! -f $(SECRETS_DIR)/wp_admin_user.txt ]; then \
+	@if [ ! -f $(SECRETS_DIR)/wp_admin_user ]; then \
 		echo "tjooris" > $(SECRETS_DIR)/wp_admin_user; \
 	fi
 
-	@if [ ! -f $(SECRETS_DIR)/wp_admin_password.txt ]; then \
+	@if [ ! -f $(SECRETS_DIR)/wp_admin_password ]; then \
 		echo "password" > $(SECRETS_DIR)/wp_admin_password; \
 	fi
 
