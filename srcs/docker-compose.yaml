@@ -111,6 +111,13 @@ services:
             - inception
         restart: always
 
+    static-website:
+        build: ./requirements/bonus/website
+        container_name: static-website
+        restart: always
+        networks:
+            - inception
+
 secrets:
     db-password:
         file: secrets/db_password

@@ -5,7 +5,6 @@ RUN apk update && apk add --no-cache nginx openssl && \
 
 COPY nginx/conf/nginx.conf /etc/nginx/nginx.conf
 COPY --chmod=+x nginx/entrypoint.sh /
-COPY bonus/website /var/www/static
 
 EXPOSE 80 443
 
