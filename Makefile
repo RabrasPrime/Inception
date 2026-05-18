@@ -55,7 +55,7 @@ clean:
 	cd srcs/ ; docker compose down -v
 	cd srcs/ ; docker system prune -af --volumes
 	sudo rm -rf ~/data/db/*
-	sudo rm -rf ~/data/wordpress/*
+	sudo rm -rf ~/data/wp/*
 
 re: clean all
 

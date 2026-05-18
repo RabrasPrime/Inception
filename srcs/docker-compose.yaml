@@ -13,6 +13,11 @@ services:
         networks:
             - inception
         restart: always
+        healthcheck:
+            test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "--password=$$(cat /run/secrets/db_password)"]
+            interval: 5s
+            timeout: 5s
+            retries: 10
 
     wordpress:
         container_name: wordpress

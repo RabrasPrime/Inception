@@ -3,10 +3,6 @@
 DB_PASS=$(cat /run/secrets/db-password | tr -d '\n')
 WP_ADMIN_PASS=$(cat /run/secrets/wp-admin-password | tr -d '\n')
 
-until mysqladmin ping -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASS" --silent 2>/dev/null; do
-    sleep 2
-done
-
 if [ ! -f /var/www/html/wp-config.php ]; then
     wp config create --allow-root \
         --dbname="$DB_NAME" \
