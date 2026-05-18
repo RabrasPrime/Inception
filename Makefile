@@ -11,7 +11,7 @@ setup:
 	@mkdir -p ~/data/db
 	@mkdir -p ~/data/wp
 
-		@if [ ! -f $(SECRETS_DIR)/db_password ]; then \
+	@if [ ! -f $(SECRETS_DIR)/db_password ]; then \
 		echo "hunter" > $(SECRETS_DIR)/db_password; \
 	fi
 
