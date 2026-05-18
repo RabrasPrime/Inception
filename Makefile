@@ -35,11 +35,11 @@ setup:
 		echo "DATA_DIR=/var/lib/mysql" >> $(ENV_FILE); \
 		echo "WP_ADMIN=marvin" >> $(ENV_FILE); \
 		echo "WP_EMAIL=marvin@test.com" >> $(ENV_FILE); \
-		echo "WP_URL=https://tjooris.42.fr" >> $(ENV_FILE); 
-		echo "WP_TITLE=Inception" >> $(ENV_FILE); 
-		echo "WP_REDIS_HOST=redis" >> $(ENV_FILE); 
-		echo "WP_REDIS_PORT=6379" >> $(ENV_FILE); 
-		echo "FTP_USER=ftp_user" >> $(ENV_FILE); 
+		echo "WP_URL=https://tjooris.42.fr" >> $(ENV_FILE); \
+		echo "WP_TITLE=Inception" >> $(ENV_FILE); \
+		echo "WP_REDIS_HOST=redis" >> $(ENV_FILE); \
+		echo "WP_REDIS_PORT=6379" >> $(ENV_FILE); \
+		echo "FTP_USER=ftp_user" >> $(ENV_FILE); \
 	fi
 
 up:
